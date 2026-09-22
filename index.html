@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>10月4日の体験会｜Institut für Organic Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --point:#f26b3b;
+    --ink:#553727;
+    --bg:#f9f7ef;
+    --second:#0085c9;
+    --sub:#85634b;
+    --line:#e6ddc9;
+    --white:#fffdf8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px;}
+  h1,h2,h3,.mincho{font-family:"Zen Old Mincho",serif;}
+
+  /* ===== ヒーロー（写真＋グラデーション） ===== */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:flex-end;
+    background-image:url("img/tour-toast.jpg");
+    background-size:cover;
+    background-position:58% center;
+    padding:60px 0 40px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to bottom,
+      rgba(28,16,9,.04) 0%,
+      rgba(28,16,9,.16) 22%,
+      rgba(28,16,9,.58) 44%,
+      rgba(28,16,9,.86) 66%,
+      rgba(28,16,9,.94) 100%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero .eyebrow{
+    color:#f2e4d6;font-size:13px;letter-spacing:.08em;margin-bottom:16px;
+    font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.9);
+  }
+  .hero h1{
+    font-size:29px;font-weight:700;line-height:1.55;margin-bottom:18px;color:#fff;
+    text-shadow:0 2px 18px rgba(0,0,0,.85),0 1px 4px rgba(0,0,0,.6);
+  }
+  .hero .lead{
+    font-size:15px;color:#f4e9dd;line-height:1.9;
+    text-shadow:0 1px 12px rgba(0,0,0,.85);
+  }
+  .hero .logo{display:block;margin-top:26px;width:170px;max-width:52%;height:auto;
+    filter:brightness(0) invert(1);opacity:.92;}
+  .hero-cap{
+    position:absolute;right:14px;bottom:10px;z-index:1;
+    font-size:10.5px;color:rgba(255,255,255,.68);letter-spacing:.02em;
+  }
+  @media(max-width:480px){
+    .hero{min-height:86vh;background-position:52% 22%;padding-bottom:34px;}
+    .hero h1{font-size:26px;line-height:1.6;}
+    .hero .lead{font-size:14.5px;}
+    .hero .logo{width:150px;margin-top:22px;}
+    section{padding:32px 0;}
+  }
+
+  section{padding:38px 0;}
+  section.alt{background:var(--white);}
+  .sec-title{font-size:20px;font-weight:700;margin-bottom:20px;padding-left:14px;border-left:5px solid var(--point);}
+  .sec-eyebrow{font-size:12px;color:var(--second);font-weight:700;letter-spacing:.06em;margin-bottom:6px;}
+  p{margin-bottom:14px;}
+  p:last-child{margin-bottom:0;}
+  .hl{background:linear-gradient(transparent 58%, #f7e0a0 58%);font-weight:700;padding:0 1px;}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px 22px;margin-bottom:16px;}
+
+  /* 開催概要 */
+  .info-table{width:100%;border-collapse:collapse;font-size:15px;}
+  .info-table th,.info-table td{text-align:left;padding:12px 6px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .info-table tr:last-child th,.info-table tr:last-child td{border-bottom:none;}
+  .info-table th{width:30%;color:var(--sub);font-weight:500;white-space:nowrap;}
+  .info-table td{font-weight:700;}
+  .info-table td small{display:block;font-weight:400;font-size:13px;color:var(--sub);line-height:1.7;}
+
+  /* 写真 */
+  .photo{margin:24px 0;}
+  .photo img{width:100%;height:auto;border-radius:14px;display:block;}
+  .photo .cap{font-size:12.5px;color:var(--sub);margin-top:9px;line-height:1.75;}
+
+  /* 当日の流れ（時刻つき） */
+  .timeline{list-style:none;}
+  .timeline > li{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed var(--line);}
+  .timeline > li:last-child{border-bottom:none;}
+  .timeline .when{flex:none;width:96px;font-family:"Zen Old Mincho",serif;font-weight:700;font-size:14px;color:var(--point);padding-top:3px;line-height:1.6;}
+  .timeline .when small{display:block;font-size:11.5px;color:var(--sub);font-weight:500;font-family:"Noto Sans JP",sans-serif;}
+  .timeline .what{flex:1;}
+  .timeline .what b{display:block;font-size:16.5px;font-family:"Zen Old Mincho",serif;margin-bottom:6px;line-height:1.6;}
+  .timeline .what p{font-size:14.5px;line-height:1.85;margin-bottom:8px;}
+  .timeline .what p:last-child{margin-bottom:0;}
+  .timeline .what ul{list-style:none;margin:6px 0 0;}
+  .timeline .what ul li{padding:4px 0 4px 18px;position:relative;font-size:13.5px;color:var(--sub);line-height:1.75;}
+  .timeline .what ul li::before{content:"・";position:absolute;left:0;}
+  @media(max-width:480px){
+    .timeline > li{flex-direction:column;gap:6px;}
+    .timeline .when{width:auto;}
+    .timeline .when small{display:inline;margin-left:8px;}
+  }
+
+  /* 実際の問い */
+  .taste{background:var(--white);border:2px dashed var(--point);border-radius:14px;padding:22px 20px;margin:18px 0 6px;}
+  .taste .label{font-size:13px;font-weight:700;color:var(--point);margin-bottom:12px;}
+  .taste .q-item{padding:12px 0;border-bottom:1px dashed var(--line);}
+  .taste .q-item:last-child{border-bottom:none;padding-bottom:0;}
+  .taste .q-item .qt{font-family:"Zen Old Mincho",serif;font-size:16px;line-height:1.8;}
+
+  /* 守っていること */
+  .promise{background:var(--ink);color:#f3e9dc;border-radius:14px;padding:26px 22px;}
+  .promise .ttl{font-family:"Zen Old Mincho",serif;font-size:18px;color:#fff;margin-bottom:14px;line-height:1.7;}
+  .promise ul{list-style:none;}
+  .promise li{padding:10px 0 10px 30px;position:relative;font-size:15px;line-height:1.8;border-bottom:1px dashed rgba(255,255,255,.18);}
+  .promise li:last-child{border-bottom:none;}
+  .promise li::before{content:"一";position:absolute;left:0;top:10px;color:#ffd7a6;font-family:"Zen Old Mincho",serif;font-weight:700;}
+  .promise .em{color:#ffd7a6;font-weight:700;}
+  .promise .small{font-size:13.5px;color:#d9c3ac;margin-top:14px;line-height:1.85;}
+
+  .voice-card{background:var(--white);border:1px solid var(--line);border-left:5px solid var(--second);border-radius:0 12px 12px 0;padding:20px 20px;margin-bottom:16px;}
+  .voice-card .q{font-size:15px;line-height:1.85;margin-bottom:12px;}
+  .voice-card .who{font-size:13px;color:var(--sub);}
+
+  .u-block{background:#fbeee6;border-radius:12px;padding:18px 20px;margin-bottom:12px;}
+  .u-block .label{font-size:13px;font-weight:700;color:var(--point);margin-bottom:4px;}
+  .u-block p{font-size:14.5px;line-height:1.85;}
+
+  .callout{background:#eaf5fb;border-radius:12px;padding:18px 20px;font-size:14px;color:#1a5a78;line-height:1.85;margin-top:18px;}
+
+  .faq{border-bottom:1px solid var(--line);padding:16px 0;}
+  .faq:last-child{border-bottom:none;}
+  .faq .q{font-weight:700;font-size:15px;margin-bottom:8px;display:flex;gap:8px;}
+  .faq .q .qm{color:var(--point);flex:none;}
+  .faq .a{font-size:14px;color:var(--sub);padding-left:24px;line-height:1.85;}
+
+  .deadline{background:var(--ink);color:#fff;border-radius:12px;padding:18px 20px;text-align:center;margin:20px 0;}
+  .deadline .d{font-family:"Zen Old Mincho",serif;font-size:18px;font-weight:700;}
+  .deadline .s{font-size:13px;color:#d9c3ac;margin-top:6px;}
+
+  /* フォーム */
+  .form-sec{background:var(--white);border-top:3px solid var(--point);}
+  form{margin-top:6px;}
+  .field{margin-bottom:20px;}
+  label{display:block;font-weight:700;font-size:15px;margin-bottom:8px;}
+  label .req{color:var(--point);font-size:12px;margin-left:6px;}
+  label .opt{color:var(--sub);font-size:12px;margin-left:6px;font-weight:400;}
+  input[type=text],input[type=email],select,textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-size:16px;
+    font-family:inherit;background:#fff;color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--point);}
+  textarea{min-height:70px;resize:vertical;}
+  .radio-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .radio-opt{
+    flex:1 1 45%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+    font-size:14px;cursor:pointer;background:#fff;text-align:left;line-height:1.6;display:flex;align-items:center;gap:6px;
+  }
+  .radio-opt input{accent-color:var(--point);flex:none;}
+  .check{display:flex;gap:10px;align-items:flex-start;background:var(--bg);border-radius:10px;padding:14px;font-size:14px;line-height:1.7;}
+  .check input{margin-top:5px;flex:none;width:18px;height:18px;accent-color:var(--point);}
+  .submit{
+    width:100%;background:var(--point);color:#fff;border:none;padding:17px;border-radius:12px;font-size:17px;
+    font-weight:700;font-family:"Zen Old Mincho",serif;cursor:pointer;margin-top:8px;transition:opacity .2s;
+  }
+  .submit:hover{opacity:.9;}
+  .submit:disabled{opacity:.5;cursor:not-allowed;}
+  .form-note{font-size:13px;color:var(--sub);margin-top:14px;text-align:center;line-height:1.8;}
+
+  #thanks{display:none;text-align:center;padding:30px 10px;}
+  #thanks .mincho{font-size:20px;color:var(--point);margin-bottom:14px;}
+  .meet-box{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px;margin:18px auto;max-width:460px;text-align:left;font-size:14px;line-height:1.9;}
+  .meet-box a{color:var(--point);font-weight:700;word-break:break-all;}
+  #fallback{display:none;text-align:center;padding:30px 10px;}
+  #fallback .mincho{font-family:"Zen Old Mincho",serif;font-size:19px;color:var(--point);margin-bottom:14px;}
+  .fallback-btn{
+    display:block;background:var(--point);color:#fff;text-decoration:none;
+    padding:16px;border-radius:12px;font-size:16px;font-weight:700;
+    font-family:"Zen Old Mincho",serif;margin:20px auto;max-width:320px;
+  }
+
+  .closing{
+    position:relative;text-align:center;padding:70px 20px;
+    background-image:url("img/tour-hall.jpg");background-size:cover;background-position:center 38%;
+  }
+  .closing::before{content:"";position:absolute;inset:0;background:rgba(30,18,10,.72);}
+  .closing .wrap{position:relative;z-index:1;}
+  .closing .mincho{font-size:20px;line-height:1.9;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5);}
+  .closing .actions{margin-top:26px;display:flex;flex-direction:column;gap:10px;max-width:320px;margin-left:auto;margin-right:auto;}
+  .closing .actions a{
+    display:block;padding:14px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;
+    border:1px solid rgba(255,255,255,.5);color:#fff;
+  }
+  .closing .actions a.primary{background:var(--point);color:#fff;border-color:var(--point);}
+
+  footer{background:var(--ink);color:#e9ddcd;text-align:center;padding:28px 20px;font-size:12px;line-height:1.9;}
+  footer a{color:#f7c9b3;text-decoration:underline;}
+
+  /* 追従CTA */
+  #stickyCta{position:fixed;left:0;right:0;bottom:0;z-index:9998;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(255,253,248,.96);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.08);
+    transform:translateY(110%);transition:transform .25s ease;}
+  #stickyCta.on{transform:translateY(0);}
+  #stickyCta a{display:block;max-width:640px;margin:0 auto;background:var(--point);color:#fff;text-decoration:none;
+    text-align:center;padding:13px;border-radius:10px;font-weight:700;font-family:"Zen Old Mincho",serif;font-size:15px;}
+  #stickyCta small{display:block;text-align:center;font-size:11.5px;color:var(--sub);margin-top:4px;}
+  body.has-sticky{padding-bottom:80px;}
+
+  /* 上部に固定する締切カウントダウン（10/3 12:00 JSTまで） */
+  #countdown{position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--point);color:#fff;
+    padding:9px 14px;text-align:center;font-size:13.5px;line-height:1.5;box-shadow:0 2px 10px rgba(0,0,0,.25);display:none;}
+  #countdown b{font-family:"Zen Old Mincho",serif;font-size:17px;color:#fff;margin:0 2px;}
+  #countdown .lbl{font-size:12px;color:#ffe6d8;display:block;}
+  body.has-countdown{padding-top:52px;}
+  @media(max-width:480px){ #countdown{font-size:12.5px;padding:8px 10px;} #countdown b{font-size:15px;} body.has-countdown{padding-top:50px;} }
+</style>
+<script>
+/* ── 公開期間ゲート（2026-09-19 なつこ決定・日本時間）
+   〜9/23(水)23:59：準備中の画面だけ ／ 9/24(木)0:00〜10/3(土)11:59：募集 ／ 10/3(土)12:00〜：受付終了の画面だけ（同時刻にリポジトリを非公開にする予約あり）
+   確認用：?preview=open（募集中の見た目）／?preview=close（終了画面）。先の状態だけ見られる・過去には戻せない */
+window.IOB_PHASE = (function(){
+  var order = ["soon","open","close"], now = Date.now(), ph = "soon";
+  if (now >= Date.UTC(2026, 8, 23, 15, 0, 0)) ph = "open";  // 9/24 00:00 JST
+  if (now >= Date.UTC(2026, 9, 3, 3, 0, 0))   ph = "close"; // 10/3 12:00 JST
+  var p = new URLSearchParams(location.search).get("preview");
+  if (order.indexOf(p) > order.indexOf(ph)) ph = p;
+  document.documentElement.className += " phase-" + ph;
+  return ph;
+})();
+</script>
+<style>
+  .phase-soon body > *:not(#soon):not(script){display:none !important;}
+  .phase-close body > *:not(#closed):not(script){display:none !important;}
+  #soon,#closed{display:none;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+  .phase-soon #soon{display:flex;}
+  .phase-close #closed{display:flex;}
+</style>
+</head>
+<body>
+
+<!-- 上部固定：締切までのカウントダウン（募集期間だけ表示） -->
+<div id="countdown"><span class="lbl">体験会のお申し込みは</span><span id="cd-text">…</span></div>
+
+<!-- ============ 〜9/23：準備中の画面 ============ -->
+<main id="soon">
+  <div>
+    <img src="iob-logo-orange.png" alt="Institut für Organic Business" width="150" style="margin-bottom:26px;">
+    <p style="font-size:18px;font-weight:700;margin-bottom:12px;">10月4日（日）の体験会</p>
+    <p style="font-size:14px;line-height:1.9;">お申し込みの受付は、9月24日（木）0:00（日本時間）に始まります。<br>ご案内のメールをお待ちください。</p>
+    <p style="font-size:13px;line-height:1.9;margin-top:14px;color:var(--sub);">お問い合わせは school@iob.bio までお送りください。</p>
+  </div>
+</main>
+
+<!-- ============ 10/3 12:00〜：終了画面 ============ -->
+<main id="closed">
+  <div>
+    <img src="iob-logo-orange.png" alt="Institut für Organic Business" width="150" style="margin-bottom:26px;">
+    <p style="font-size:18px;font-weight:700;margin-bottom:12px;">体験会のお申し込みは締め切りました</p>
+    <p style="font-size:14px;line-height:1.9;">ご覧いただき、ありがとうございました。<br>お申し込み済みの方には、Google Meet のリンクをメールでお送りしています。</p>
+    <p style="font-size:13px;line-height:1.9;margin-top:14px;color:var(--sub);">届いていない場合やお問い合わせは school@iob.bio までお送りください。</p>
+  </div>
+</main>
+
+<!-- ============ ① FV ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">オーガニック専門家コース・コスメ専門家コースを<br>受講してくださったみなさんへ</div>
+    <h1>見てから決めていい場を、<br>つくりました。</h1>
+    <div class="lead">10月4日（日）19:00〜20:30・オンライン・無料。<br>説明を聞く会ではありません。<br>実際にやってみる会です。</div>
+    <img class="logo" src="iob-logo-orange.png" alt="Institut für Organic Business" width="170">
+  </div>
+  <div class="hero-cap">2026年 独ビオホテル・タナホフツアーにて受講生と</div>
+</header>
+
+<!-- ============ ② 開催概要 ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-eyebrow">体験会のご案内</div>
+    <h2 class="sec-title">10月4日（日）の夜、90分</h2>
+    <div class="card">
+      <table class="info-table">
+        <tr><th>日時</th><td>2026年10月4日（日）19:00〜20:30<small>日本時間。途中入室・途中退出もかまいません</small></td></tr>
+        <tr><th>場所</th><td>オンライン（Google Meet）<small>お申し込み後の自動返信メールで、参加用のリンクをお送りします</small></td></tr>
+        <tr><th>参加費</th><td>無料</td></tr>
+        <tr><th>持ちもの</th><td>なにも要りません<small>カメラは切ったままでも、聞いているだけでも大丈夫です</small></td></tr>
+        <tr><th>録画</th><td>あります<small>出られなくなった方には、翌日に録画をお送りします</small></td></tr>
+        <tr><th>お申し込み</th><td>10月3日（土）12:00まで<small>日本時間</small></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ③ はじめに ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-eyebrow">はじめに</div>
+    <h2 class="sec-title">間に合わなかった方、迷ったまま終わった方へ</h2>
+    <p>9月に、3つの場所のご案内をしました。Daily Letters、共同学習会（Startup Circle）、グルコン（Leaders Lounge）。</p>
+    <p>申し込んでくださった方、ありがとう。そして、間に合わなかった方。迷ったまま終わった方。ページだけ開いて、そっと閉じた方。</p>
+    <p>文章と写真だけで、自分に合うかどうかを決めるのは、正直むずかしいと思います。だから、<span class="hl">3つの場所をそのまま小さくした90分</span>を用意しました。その場で手を動かして、相談を聞いて、毎日届くメールの実物を見る。</p>
+    <p>合わなければ、それが分かるだけでも十分だと思っています。</p>
+  </div>
+</section>
+
+<!-- ============ ④ 当日の流れ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-eyebrow">当日の流れ</div>
+    <h2 class="sec-title">90分で、3つの場所を味見します</h2>
+    <ul class="timeline">
+      <li>
+        <div class="when">19:00<small>5分</small></div>
+        <div class="what">
+          <b>はじめに</b>
+          <p>今日やること3つと、この場で守っていること。カメラオフでいいこと、途中で入っても抜けてもいいことも、最初にお伝えします。</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">19:05<small>30分</small></div>
+        <div class="what">
+          <b>① 共同学習会（Startup Circle）のワーク</b>
+          <p>問いをひとつ出します。AIも使いながら、各自10分で書く。そのあと3〜4人に読み上げてもらい、聞いていた人が「私だったら」をひとつ返します。最後に私がまとめて、これを毎月12回続けると1年でどうなるかをお見せします。</p>
+          <ul>
+            <li>まとまってから書く必要はありません。まとまらないから、持ってくる場所です</li>
+            <li>読み上げるのは、手を挙げてくれた方だけです</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">19:35<small>30分</small></div>
+        <div class="what">
+          <b>② グルコン（Leaders Lounge）の相談</b>
+          <p>やり方（報告・相談・宣言）を5分で説明したあと、相談を2件扱います。相談したい方の話を、私だけでなく、参加しているみんなで扱います。事業をしていない方の視点も歓迎です。</p>
+          <ul>
+            <li>相談したいことがある方は、お申し込みフォームで先に教えてください。当日の挙手でも受けます</li>
+            <li>聞いているだけの参加でも大丈夫です</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">20:05<small>15分</small></div>
+        <div class="what">
+          <b>③ Daily Letters の実物</b>
+          <p>毎日どんなメールが届くのか、実際の画面をそのままお見せします。アウトプット月間の問い、試験の前の見直し期間と復習クイズ、質問し放題の専用グループ（BAND）、専門家コースの動画がもう一度見られること。イメージではなく、現物を見て決めてください。</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">20:20<small>10分</small></div>
+        <div class="what">
+          <b>④ 3つの場所のご案内</b>
+          <p>3つの違いと選び方、価格、お申し込みの方法を10分でお話しします。体験会に参加した方は、どの場所を選んでも最初の1ヶ月が無料です。体験会のあとのお申し込みは、10月7日（水）23:59までです。</p>
+        </div>
+      </li>
+      <li>
+        <div class="when">20:30<small>任意</small></div>
+        <div class="what">
+          <b>残って質問</b>
+          <p>同じ部屋に残ります。聞きそびれたことがあれば、どうぞ。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="taste">
+      <div class="label">①で出る問いは、たとえばこんなものです</div>
+      <div class="q-item"><div class="qt">「理想のお客さんを一人だけ決めて、その人に名前をつけてください」</div></div>
+      <div class="q-item"><div class="qt">「◯◯したい。でも△△でもある。<br>その人の矛盾する2つの気持ちを、代わりに言葉にしてください」</div></div>
+    </div>
+
+    <div class="photo">
+      <img src="img/kyoudou-meet.jpg" alt="共同学習会（Startup Circle）の様子" loading="lazy">
+      <div class="cap">共同学習会のある日。画面の向こうに、同じところで悩んでいる人がいます。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑤ 守っていること ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-eyebrow">入る前に、知っておいてほしいこと</div>
+    <h2 class="sec-title">この場で守っていること</h2>
+    <p>いただいたお返事の中に、「オーガニックの話をすると批判されて、話すのを避けてしまう」「別の会で嫌な思いをして、仲間をつくるのが怖くなった」というものがありました。だから先に、私たちが守っていることをお伝えしておきます。</p>
+
+    <div class="promise">
+      <div class="ttl">体験会も、同じ約束のもとで開きます</div>
+      <ul>
+        <li><span class="em">批判をしない。</span>多様な意見を歓迎して、意見は受け止める</li>
+        <li><span class="em">ここで話したことは、口外しない。</span>相談の中身も、誰が何を言ったかも</li>
+        <li><span class="em">失敗はない。</span>行動の先には学びか成功しかない、と考えています</li>
+      </ul>
+      <div class="small">これは、共同学習会（Startup Circle）でもグルコン（Leaders Lounge）でも、毎回みなさんに伝えていることです。</div>
+    </div>
+
+    <div class="voice-card" style="margin-top:22px;">
+      <div class="q">「自分だけが大変なのではなく、みんなが目的を達成するために試行錯誤していることがわかり、みんな同じなのだと安心できた」</div>
+      <div class="who">けーこちゃん</div>
+    </div>
+
+    <div class="callout">
+      <b>カメラを切ったままでも、聞いているだけでも大丈夫です。</b><br>
+      何も持ってこなくてかまいません。何年ぶりでも、何も成し遂げていなくても、それは輪に入れない理由にはなりません。
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑥ こんな方に ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-eyebrow">こんな方に</div>
+    <h2 class="sec-title">いまの状況は、どれに近いですか</h2>
+    <p>どれでも来てください。お申し込みフォームで、近いものをひとつ選んでもらいます。当日の進め方の参考にします。</p>
+
+    <div class="u-block">
+      <div class="label">事業をしている</div>
+      <p>もう商品やサービスがあって、「どう届けるか」で止まっている。②の相談で、そこを持ち寄ってください。</p>
+    </div>
+    <div class="u-block">
+      <div class="label">準備中</div>
+      <p>やりたいことはある。でも、何を、誰に、いくらで、が決まらない。①のワークは、まさにそこを扱います。</p>
+    </div>
+    <div class="u-block">
+      <div class="label">学んだが、止まっている</div>
+      <p>受講が途中のまま。試験に落ちたまま。何年も開いていない。責める気持ちは、まったくありません。③で、学び直しの実物を見てください。</p>
+    </div>
+    <div class="u-block">
+      <div class="label">暮らしのために学んだ</div>
+      <p>仕事にするつもりはない。それでも、オーガニックを選んで暮らしている。それだけで、十分に活動しています。同じ話を聞いて、感じたことを一言くれたら嬉しいです。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑦ FAQ ============ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-eyebrow">よくある質問</div>
+    <h2 class="sec-title">お申し込み前に</h2>
+
+    <div class="faq">
+      <div class="q"><span class="qm">Q</span><span>体験会に出たら、申し込まないといけませんか?</span></div>
+      <div class="a">いいえ。見てから決めていい場です。合わなければ、それが分かるだけでも十分だと思っています。3つの場所の話は、最後の10分にまとめます。</div>
+    </div>
+    <div class="faq">
+      <div class="q"><span class="qm">Q</span><span>顔を出さないといけませんか? 話さないといけませんか?</span></div>
+      <div class="a">どちらも要りません。カメラは切ったままで、聞いているだけで大丈夫です。お申し込みフォームに「聞くだけにしたい」の欄があるので、そこにチェックを入れてください。当日、指名しません。</div>
+    </div>
+    <div class="faq">
+      <div class="q"><span class="qm">Q</span><span>当日、出られなくなったら?</span></div>
+      <div class="a">録画をお送りします。お申し込みいただいた方には、翌日にメールで録画をお届けします。10月7日（水）まで見られます。</div>
+    </div>
+    <div class="faq">
+      <div class="q"><span class="qm">Q</span><span>オーガニック専門家コースのⅠしか受けていません（またはコスメ専門家コースだけです）。参加できますか?</span></div>
+      <div class="a">体験会は、どちらのコースの方も、どこまで受けた方も参加できます。3つの場所については、受講された内容を見て個別にご案内しますので、当日か school@iob.bio でご相談ください。</div>
+    </div>
+    <div class="faq">
+      <div class="q"><span class="qm">Q</span><span>何か準備するものはありますか?</span></div>
+      <div class="a">ありません。Google Meet が開けるパソコンかスマートフォンがあれば大丈夫です。①のワークで書くものが要りますが、紙でもメモアプリでもかまいません。</div>
+    </div>
+    <div class="faq">
+      <div class="q"><span class="qm">Q</span><span>同窓会に申し込んでいませんでした。参加できますか?</span></div>
+      <div class="a">できます。同窓会に来た方も、来られなかった方も、申し込まなかった方も、同じように参加できます。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑧ 申込フォーム ============ -->
+<section class="form-sec">
+  <div class="wrap">
+    <div class="sec-eyebrow">お申し込み</div>
+    <h2 class="sec-title">体験会 申込フォーム</h2>
+
+    <div class="deadline">
+      <div class="d">お申し込みは 2026年10月3日（土）12:00 まで</div>
+      <div class="s">日本時間・参加無料</div>
+    </div>
+
+    <form id="applyForm">
+      <div class="field">
+        <label>お名前<span class="req">必須</span></label>
+        <input type="text" name="name" placeholder="例：山田 花子" required>
+      </div>
+      <div class="field">
+        <label>メールアドレス<span class="req">必須</span></label>
+        <input type="email" name="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="field">
+        <label>いまの状況<span class="req">必須</span><span class="opt">近いものをひとつ</span></label>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="status" value="事業をしている" required>事業をしている</label>
+          <label class="radio-opt"><input type="radio" name="status" value="準備中">準備中</label>
+          <label class="radio-opt"><input type="radio" name="status" value="学んだが止まっている">学んだが止まっている</label>
+          <label class="radio-opt"><input type="radio" name="status" value="暮らしのために学んだ">暮らしのために学んだ</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>相談したいことがあれば、1行で<span class="opt">任意</span></label>
+        <textarea name="consult" placeholder="例：商品はあるけれど、どこに置いてもらえばいいのか分からない"></textarea>
+        <p style="font-size:12.5px;color:var(--sub);margin-top:6px;line-height:1.7;">②のグルコンの時間で、ここに書いてくださった相談から2件を扱います。書いたからといって、必ず指名するわけではありません。</p>
+      </div>
+      <div class="field">
+        <div class="check">
+          <input type="checkbox" id="listenOnly" name="listenOnly">
+          <label for="listenOnly" style="font-weight:400;margin:0;">当日、話すのは難しいので、聞くだけにしたい<br><span style="font-size:12.5px;color:var(--sub);">チェックを入れた方は、当日指名しません。</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="check">
+          <input type="checkbox" id="agree" required>
+          <label for="agree" style="font-weight:400;margin:0;">
+            <a href="privacy.html" style="color:var(--point);font-weight:700;">プライバシーポリシー</a>を確認し、同意のうえお申し込みします。
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit" id="submitBtn">体験会に申し込む</button>
+      <div class="form-note">送信後、自動返信メールにて<br>Google Meet のリンクをお送りします。</div>
+    </form>
+
+    <div id="thanks">
+      <div class="mincho">お申し込みありがとうございます。</div>
+      <p>参加用のリンクを、ご登録のメールアドレス宛にお送りします。<br>届いていなければ、迷惑メールフォルダも見てみてください。<br>それでも届かない場合は school@iob.bio までご連絡ください。</p>
+      <div class="meet-box">
+        <b>10月4日（日）19:00〜20:30（日本時間）</b><br>
+        Google Meet：<a href="https://meet.google.com/hba-iakg-whx" target="_blank" rel="noopener">https://meet.google.com/hba-iakg-whx</a><br>
+        <span style="font-size:13px;color:var(--sub);">前日の夜と、当日の夕方にも、リマインドのメールをお送りします。</span>
+      </div>
+      <p>何も持ってこなくて大丈夫です。<br>当日、画面の向こうでお会いできたら嬉しいです。</p>
+    </div>
+
+    <div id="fallback">
+      <div class="mincho">恐れ入ります。あと一手間だけお願いします。</div>
+      <p>ただいまフォームの自動送信が使えない状態です。<br>
+      下のボタンを押すと、入力いただいた内容が入ったメールが開きます。<br>
+      そのまま送信していただければ、確実にお申し込みを受け付けます。</p>
+      <a id="fallbackMail" class="fallback-btn" href="#">メールでお申し込みを送る</a>
+      <p style="font-size:13px;">うまく開かない場合は、<br>お手数ですが <b>school@iob.bio</b> 宛に<br>お名前と「体験会に参加します」とお送りください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ⑨ 最後の一言 ============ -->
+<div class="closing">
+  <div class="wrap">
+    <p class="mincho">何年ぶりでも、<br>何も持っていなくても大丈夫です。<br><br>10月4日の夜、<br>画面の向こうでお会いできたら嬉しいです。</p>
+    <div class="actions">
+      <a class="primary" href="#applyForm">申込フォームへ</a>
+    </div>
+  </div>
+</div>
+
+<!-- 追従CTA -->
+<div id="stickyCta"><a href="#applyForm">体験会に申し込む（無料）</a><small>10月4日（日）19:00〜20:30・お申し込みは10月3日（土）12:00まで</small></div>
+
+<footer>
+  Institut für Organic Business GmbH<br>
+  お問い合わせ：school@iob.bio<br><br>
+  <a href="privacy.html">プライバシーポリシー</a><br><br>
+  Copyright ©2026 Institut für Organic Business GmbH. All Rights Reserved.
+</footer>
+
+<script>
+  // 申込先GAS（スプレッドシート「8月既存生販売_申込管理」に紐づくウェブアプリ。3サービスの申込と同じGAS）
+  // 体験会の申込は type:"体験会" で送り、GAS側で「体験会申込」タブに振り分ける。
+  // 🚨コードを直したら「デプロイを管理 → 編集 → バージョン：新バージョン」で再デプロイすること。
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbzebRdA-kdzFIXAmkNGMDx-Hp20vm1jvcTn2J2KwFd-mrbvoRmf8Bxm6-NI8ZOM1hY0oA/exec";
+
+  // ── 追従CTA：ファーストビューを過ぎたら出す／フォームに来たら引っ込める ──
+  (function(){
+    if (window.IOB_PHASE && window.IOB_PHASE !== "open") return;
+    var bar = document.getElementById('stickyCta');
+    var formSec = document.getElementById('applyForm');
+    if(!bar || !formSec) return;
+    document.body.classList.add('has-sticky');
+    function update(){
+      var past = window.scrollY > window.innerHeight * 0.9;
+      var atForm = formSec.getBoundingClientRect().top < window.innerHeight;
+      bar.classList.toggle('on', past && !atForm);
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  const form = document.getElementById('applyForm');
+  const btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!document.getElementById('agree').checked){ return; }
+    btn.disabled = true;
+    btn.textContent = "送信中…";
+
+    const data = {
+      type: "体験会",
+      name: form.name.value,
+      email: form.email.value,
+      status: (form.querySelector('input[name=status]:checked') || {}).value || "",
+      consult: form.consult.value || "",
+      listenOnly: document.getElementById('listenOnly').checked ? "聞くだけ希望" : ""
+    };
+
+    // ── 保険：GAS_URLが未設定のときは「送信できたフリ」をせず、メール申込に切り替える ──
+    // no-cors のfetchはサーバーが404/405を返しても成功扱いになるため、
+    // URLが入っていない状態で完了画面を出すと申込が誰にも届かないまま消える。
+    function showFallback(){
+      var lines = [
+        "お名前：" + data.name,
+        "メールアドレス：" + data.email,
+        "いまの状況：" + data.status,
+        "相談したいこと：" + (data.consult || "（なし）"),
+        "聞くだけ希望：" + (data.listenOnly || "（なし）")
+      ].join("\n");
+      document.getElementById('fallbackMail').href =
+        "mailto:school@iob.bio"
+        + "?subject=" + encodeURIComponent("10月4日 体験会に参加します（" + data.name + "）")
+        + "&body=" + encodeURIComponent("体験会に申し込みます。\n\n" + lines + "\n");
+      form.style.display = "none";
+      var fb = document.getElementById('fallback');
+      fb.style.display = "block";
+      window.scrollTo({top: fb.offsetTop - 40, behavior:"smooth"});
+    }
+
+    if (!GAS_URL || GAS_URL.indexOf("PASTE_") === 0 || GAS_URL.indexOf("http") !== 0) {
+      showFallback();
+      return;
+    }
+
+    // GASは exec → googleusercontent へ302リダイレクトされ、POSTがGETに変換されることがある。
+    // そのため payload をURLエンコードで送り、GAS側は doPost / doGet の両方で受ける。
+    fetch(GAS_URL, {
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded;charset=utf-8"},
+      body: new URLSearchParams({ payload: JSON.stringify(data) })
+    }).then(function(){
+      form.style.display="none";
+      document.getElementById('thanks').style.display="block";
+      window.scrollTo({top:document.getElementById('thanks').offsetTop-40, behavior:"smooth"});
+    }).catch(function(){
+      showFallback();
+    });
+  });
+</script>
+
+<script>
+/* 締切カウントダウン：2026年10月3日(土)12:00 JST まで。募集期間以外は出さない */
+(function(){
+  if (window.IOB_PHASE && window.IOB_PHASE !== "open") return;
+  var END = Date.UTC(2026, 9, 3, 3, 0, 0); // 10/3 12:00 JST
+  var box = document.getElementById("countdown"), out = document.getElementById("cd-text");
+  if (!box || !out) return;
+  function tick(){
+    var left = END - Date.now();
+    if (left <= 0) { box.style.display = "none"; document.body.classList.remove("has-countdown"); return; }
+    var d = Math.floor(left/86400000), h = Math.floor(left/3600000)%24, m = Math.floor(left/60000)%60, sec = Math.floor(left/1000)%60;
+    out.innerHTML = (d > 0 ? "あと<b>" + d + "</b>日" : "") + "<b>" + h + "</b>時間<b>" + m + "</b>分<b>" + sec + "</b>秒";
+    setTimeout(tick, 1000);
+  }
+  box.style.display = "block";
+  document.body.classList.add("has-countdown");
+  tick();
+})();
+</script>
+</body>
+</html>
