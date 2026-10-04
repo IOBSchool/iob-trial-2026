@@ -98,7 +98,7 @@
   /* 写真 */
   .photo{margin:24px 0;}
   .photo img{width:100%;height:auto;border-radius:14px;display:block;}
-  .photo .cap{font-size:12.5px;color:var(--sub);margin-top:9px;line-height:1.75;}
+  .photo .cap{font-size:13.5px;color:var(--sub);margin-top:9px;line-height:1.75;}
 
   /* 当日の流れ（時刻つき） */
   .timeline{list-style:none;}
@@ -241,8 +241,10 @@
   .reassure-item b{display:block;font-size:14.5px;line-height:1.5;margin-bottom:3px;}
   .reassure-item span{display:block;font-size:12.5px;color:var(--sub);line-height:1.6;}
 
+  .reassure-cta{display:block;max-width:420px;margin:22px auto 0;background:var(--point);color:#fff;text-decoration:none;text-align:center;padding:15px;border-radius:12px;font-weight:700;font-family:"Zen Old Mincho",serif;font-size:16px;}
+  .reassure-cta-note{text-align:center;font-size:12.5px;color:var(--sub);margin-top:8px;}
   .persona{display:flex;gap:16px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px 16px;margin-bottom:14px;box-shadow:0 2px 0 rgba(85,55,39,.05);}
-  .persona .avatar{flex:none;width:92px;height:92px;}
+  .persona .avatar{flex:none;width:80px;height:80px;}
   .persona-body{flex:1;min-width:0;}
   .persona-tag{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--point);border-radius:999px;padding:0 9px;line-height:1.7;margin-bottom:5px;}
   .persona.p2 .persona-tag{background:var(--second);}
@@ -250,7 +252,7 @@
   .persona.p4 .persona-tag{background:#c28a3a;}
   .persona-label{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:17px;line-height:1.5;margin-bottom:5px;}
   .persona p{font-size:14px;line-height:1.8;margin:0;}
-  @media(max-width:480px){ .persona{padding:16px 14px;gap:12px;} .persona .avatar{width:76px;height:76px;} .persona-label{font-size:16px;} .persona p{font-size:13.5px;} }
+  @media(max-width:480px){ .persona{padding:16px 14px;gap:12px;} .persona .avatar{width:64px;height:64px;} .persona-label{font-size:16px;} .persona p{font-size:13.5px;} }
 
   .taste.core{position:relative;border-style:solid;border-width:2px;background:#fff8ec;padding-left:84px;}
   .taste.core .bulb{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:48px;height:48px;}
@@ -333,7 +335,7 @@ window.IOB_PHASE = (function(){
   <div class="wrap">
     <div class="eyebrow">オーガニック専門家コース・コスメ専門家コースを<br>受講中・受講してくださったみなさんへ</div>
     <h1>久しぶりの方も。<br>試験を、いっしょに見てみませんか。</h1>
-    <div class="lead">しばらく教材を開いていなくても大丈夫です。<br>どんな試験なのかを見て、実際の対策勉強を<br>みんなでやってみる90分。<br>10月11日（日）19:00〜20:30・オンライン・無料。</div>
+    <div class="lead">何年も教材を開いていなくても、<br>受験を決めていなくても大丈夫です。<br>試験でどう問われるかを先に見て、<br>必要なところだけ戻ってみる90分。<br>10月11日（日）19:00〜20:30・オンライン・無料。</div>
     <img class="logo" src="iob-logo-orange.png" alt="Institut für Organic Business" width="170">
   </div>
   <div class="hero-cap">2026年 独ビオホテル・タナホフツアーにて受講生と</div>
@@ -349,6 +351,8 @@ window.IOB_PHASE = (function(){
       <div class="reassure-item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="6" width="26" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 16H29M15 23H29M15 30H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M33 30L42 21L45 24L36 33L32 34Z" fill="#f26b3b"/></svg><b>ノートとペンだけ</b><span>教材の予習は要りません</span></div>
       <div class="reassure-item"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 25L22 32L34 17" fill="none" stroke="#f26b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>受験は未定でOK</b><span>12月のことは、あとで</span></div>
     </div>
+    <a class="reassure-cta" href="#applyForm">試験対策 無料講座に申し込む</a>
+    <div class="reassure-cta-note">10月11日（日）18:00まで・参加無料</div>
   </div>
 </section>
 
@@ -427,8 +431,8 @@ window.IOB_PHASE = (function(){
       <li>
         <div class="when">20:00<small>15分</small></div>
         <div class="what">
-          <b>③ 小さなグループで、気づいたことを話す</b>
-          <p>解いてみて気づいたことを、小さなグループで話します。聞くだけでも大丈夫です。</p>
+          <b>③ 小さなグループで、気づいたことを共有する</b>
+          <p>小さなグループに分かれます。話したい方だけ話してください。聞くだけでも大丈夫です。こちらから発言を求めることはありません。</p>
         </div>
       </li>
       <li>
@@ -456,18 +460,14 @@ window.IOB_PHASE = (function(){
 <!-- ============ ⑤ 守っていること ============ -->
 <section class="alt">
   <div class="wrap">
-    <div class="sec-eyebrow">入る前に、知っておいてほしいこと</div>
-    <h2 class="sec-title">この場で守っていること</h2>
-    <p>いただいたお返事の中に、「オーガニックの話をすると批判されて、話すのを避けてしまう」「別の会で嫌な思いをして、仲間をつくるのが怖くなった」というものがありました。だから先に、私たちが守っていることをお伝えしておきます。</p>
-
+    <div class="sec-eyebrow">安心して参加していただくために</div>
+    <h2 class="sec-title">この会の約束</h2>
     <div class="promise">
-      <div class="ttl">この会も、同じ約束のもとで開きます</div>
       <ul>
         <li><span class="em">批判をしない。</span>多様な意見を歓迎して、意見は受け止める</li>
-        <li><span class="em">ここで話したことは、口外しない。</span>相談の中身も、誰が何を言ったかも</li>
-        <li><span class="em">失敗はない。</span>行動の先には学びか成功しかない、と考えています</li>
+        <li><span class="em">ここで話したことは、口外しない。</span>誰が何を言ったかも</li>
+        <li><span class="em">うまく答えられなくても大丈夫。</span>試験問題を見ながら、一緒に考える時間です</li>
       </ul>
-      <div class="small">これは、共同学習会（Startup Circle）でもグルコン（Leaders Lounge）でも、毎回みなさんに伝えていることです。</div>
     </div>
 
     <div class="voice-card" style="margin-top:22px;">
@@ -475,10 +475,6 @@ window.IOB_PHASE = (function(){
       <div class="who">けーこちゃん</div>
     </div>
 
-    <div class="callout">
-      <b>カメラオフ・聞くだけでOKです。</b><br>
-      ノートとペンだけ用意してください。しばらく教材を開いていなくても、何年ぶりでも、それは来られない理由にはなりません。
-    </div>
     <div class="photo">
       <img src="img/band_tour2018.jpg" alt="2018年 ドイツ・バイエルン州のビオホテル視察ツアーの参加者" loading="lazy">
       <div class="cap">2018年 ドイツ・バイエルン州の視察ツアーにて。</div>
