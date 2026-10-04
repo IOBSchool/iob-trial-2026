@@ -663,25 +663,24 @@ window.IOB_PHASE = (function(){
       <div class="form-note">送信後、自動返信メールにて<br>Google Meet のリンクをお送りします。</div>
     </form>
 
-    <div id="thanks">
+    <template id="thanksTpl"><div id="thanks">
       <div class="mincho">お申し込みありがとうございます。</div>
       <p>参加用のリンクを、ご登録のメールアドレス宛にお送りします。<br>届いていなければ、迷惑メールフォルダも見てみてください。<br>それでも届かない場合は school@iob.bio までご連絡ください。</p>
       <div class="meet-box">
         <b>10月11日（日）19:00〜20:30（日本時間）</b><br>
-        Google Meet：<a href="https://meet.google.com/hba-iakg-whx" target="_blank" rel="noopener">https://meet.google.com/hba-iakg-whx</a><br>
         <span style="font-size:13px;color:var(--sub);">前日の夜と、当日の夕方にも、リマインドのメールをお送りします。</span>
       </div>
       <p>ノートとペンだけ、ご用意ください。<br>久しぶりの方にも、日曜の夜に会えたら嬉しいです。</p>
-    </div>
+    </div></template>
 
-    <div id="fallback">
+    <template id="fallbackTpl"><div id="fallback">
       <div class="mincho">恐れ入ります。あと一手間だけお願いします。</div>
       <p>ただいまフォームの自動送信が使えない状態です。<br>
       下のボタンを押すと、入力いただいた内容が入ったメールが開きます。<br>
       そのまま送信していただければ、確実にお申し込みを受け付けます。</p>
       <a id="fallbackMail" class="fallback-btn" href="#">メールでお申し込みを送る</a>
       <p style="font-size:13px;">うまく開かない場合は、<br>お手数ですが <b>school@iob.bio</b> 宛に<br>お名前と「試験対策 無料講座に参加します」とお送りください。</p>
-    </div>
+    </div></template>
   </div>
 </section>
 
@@ -777,6 +776,12 @@ window.IOB_PHASE = (function(){
     update();
   })();
 
+  // 完了画面・代替画面は <template> に入れておき、必要になったときだけ画面に作る（申込前には存在しない）
+  function mountPanel(id){
+    var tp = document.getElementById(id + 'Tpl');
+    if (tp && !document.getElementById(id)) tp.parentNode.appendChild(tp.content.cloneNode(true));
+    return document.getElementById(id);
+  }
   const form = document.getElementById('applyForm');
   const btn = document.getElementById('submitBtn');
   form.addEventListener('submit', function(e){
@@ -804,6 +809,7 @@ window.IOB_PHASE = (function(){
         "いまの状況：" + data.status,
         "相談したいこと：" + (data.consult || "（なし）")
       ].join("\n");
+      mountPanel('fallback');
       document.getElementById('fallbackMail').href =
         "mailto:school@iob.bio"
         + "?subject=" + encodeURIComponent("10月11日 試験対策 無料講座に参加します（" + data.name + "）")
@@ -828,8 +834,8 @@ window.IOB_PHASE = (function(){
       body: new URLSearchParams({ payload: JSON.stringify(data) })
     }).then(function(){
       form.style.display="none";
-      document.getElementById('thanks').style.display="block";
-      window.scrollTo({top:document.getElementById('thanks').offsetTop-40, behavior:"smooth"});
+      var th = mountPanel('thanks'); th.style.display="block";
+      window.scrollTo({top:th.offsetTop-40, behavior:"smooth"});
     }).catch(function(){
       showFallback();
     });
