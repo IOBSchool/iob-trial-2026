@@ -231,6 +231,57 @@
   #countdown .lbl{font-size:12px;color:#ffe6d8;display:block;}
   body.has-countdown{padding-top:52px;}
   @media(max-width:480px){ #countdown{font-size:12.5px;padding:8px 10px;} #countdown b{font-size:15px;} body.has-countdown{padding-top:50px;} }
+
+  /* ===== 見やすさの改善（イラスト・アイコン・区切り） ===== */
+  .reassure{background:var(--white);padding:30px 0 34px;border-bottom:1px solid var(--line);}
+  .reassure-ttl{font-size:18px;text-align:center;margin-bottom:18px;line-height:1.6;}
+  .reassure-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .reassure-item{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 10px 14px;text-align:center;color:var(--ink);}
+  .reassure-item svg{width:46px;height:46px;display:block;margin:0 auto 8px;}
+  .reassure-item b{display:block;font-size:14.5px;line-height:1.5;margin-bottom:3px;}
+  .reassure-item span{display:block;font-size:12.5px;color:var(--sub);line-height:1.6;}
+
+  .persona{display:flex;gap:16px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:18px 16px;margin-bottom:14px;box-shadow:0 2px 0 rgba(85,55,39,.05);}
+  .persona .avatar{flex:none;width:92px;height:92px;}
+  .persona-body{flex:1;min-width:0;}
+  .persona-tag{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--point);border-radius:999px;padding:0 9px;line-height:1.7;margin-bottom:5px;}
+  .persona.p2 .persona-tag{background:var(--second);}
+  .persona.p3 .persona-tag{background:#6aa84f;}
+  .persona.p4 .persona-tag{background:#c28a3a;}
+  .persona-label{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:17px;line-height:1.5;margin-bottom:5px;}
+  .persona p{font-size:14px;line-height:1.8;margin:0;}
+  @media(max-width:480px){ .persona{padding:16px 14px;gap:12px;} .persona .avatar{width:76px;height:76px;} .persona-label{font-size:16px;} .persona p{font-size:13.5px;} }
+
+  .taste.core{position:relative;border-style:solid;border-width:2px;background:#fff8ec;padding-left:84px;}
+  .taste.core .bulb{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:48px;height:48px;}
+  .taste.core .qt{font-size:17px;font-weight:700;line-height:1.9;}
+  @media(max-width:480px){ .taste.core{padding-left:62px;padding-right:16px;} .taste.core .bulb{left:12px;width:38px;height:38px;} .taste.core .qt{font-size:15.5px;line-height:1.85;} }
+
+  /* 当日の流れ：縦のライン＋丸 */
+  .timeline{position:relative;}
+  .timeline > li{position:relative;border-bottom:none;padding:14px 0 14px 0;}
+  .timeline > li::before{content:"";position:absolute;left:105px;top:0;bottom:0;border-left:3px solid #f3d8c8;}
+  .timeline > li::after{content:"";position:absolute;left:99px;top:24px;width:15px;height:15px;border-radius:50%;background:var(--point);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--point);}
+  .timeline > li:first-child::before{top:24px;} .timeline > li:last-child::before{bottom:calc(100% - 24px);}
+  .timeline .when{width:90px;}
+  .timeline .what{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 14px;margin-left:22px;}
+  section:not(.alt) .timeline .what{background:var(--white);}
+  @media(max-width:480px){
+    .timeline > li{flex-direction:row;gap:0;padding-left:0;}
+    .timeline > li::before{left:9px;} .timeline > li::after{left:3px;top:20px;}
+    .timeline .when{position:absolute;left:30px;top:6px;width:auto;font-size:13px;}
+    .timeline .when small{display:inline;margin-left:6px;}
+    .timeline .what{margin-left:30px;margin-top:30px;width:calc(100% - 30px);}
+  }
+
+  .avatar-row{display:flex;justify-content:center;gap:10px;margin-bottom:22px;}
+  .avatar-row .avatar{width:64px;height:64px;border:3px solid rgba(255,255,255,.85);border-radius:50%;background:#fff;}
+  .faq .q .qm{width:24px;height:24px;border-radius:50%;background:var(--point);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;margin-top:1px;}
+  .faq .a{padding-left:32px;}
+  .faq{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px 16px;margin-bottom:10px;border-bottom:1px solid var(--line);}
+  .faq:last-child{border-bottom:1px solid var(--line);}
+  section.alt .faq{background:var(--bg);}
+  .sec-title{font-size:21px;line-height:1.6;}
 </style>
 <script>
 /* ── 公開期間ゲート（2026-09-19 なつこ決定・日本時間）
@@ -282,13 +333,26 @@ window.IOB_PHASE = (function(){
 <!-- ============ ① FV ============ -->
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">オーガニック専門家コース・コスメ専門家コースを<br>受講中の方も、受講してくださった方も、みなさんへ</div>
+    <div class="eyebrow">オーガニック専門家コース・コスメ専門家コースを<br>受講中・受講してくださったみなさんへ</div>
     <h1>久しぶりの方も。<br>試験を、いっしょに見てみませんか。</h1>
     <div class="lead">しばらく教材を開いていなくても大丈夫です。<br>どんな試験なのかを見て、実際の対策勉強を<br>みんなでやってみる90分。<br>10月11日（日）19:00〜20:30・オンライン・無料。</div>
     <img class="logo" src="iob-logo-orange.png" alt="Institut für Organic Business" width="170">
   </div>
   <div class="hero-cap">2026年 独ビオホテル・タナホフツアーにて受講生と</div>
 </header>
+
+<!-- ============ ①.5 久しぶりでも大丈夫 ============ -->
+<section class="reassure">
+  <div class="wrap">
+    <h2 class="reassure-ttl">久しぶりの方も、そのままで大丈夫です</h2>
+    <div class="reassure-grid">
+      <div class="reassure-item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="14" width="26" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 22L42 16V32L32 26Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M6 6L42 42" stroke="#f26b3b" stroke-width="4" stroke-linecap="round"/></svg><b>カメラオフでOK</b><span>顔を出さなくて大丈夫</span></div>
+      <div class="reassure-item"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 28C8 10 40 10 40 28" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><rect x="5" y="26" width="9" height="15" rx="4" fill="#f26b3b"/><rect x="34" y="26" width="9" height="15" rx="4" fill="#f26b3b"/></svg><b>聞くだけでOK</b><span>話さなくて大丈夫</span></div>
+      <div class="reassure-item"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="6" width="26" height="36" rx="4" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 16H29M15 23H29M15 30H23" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M33 30L42 21L45 24L36 33L32 34Z" fill="#f26b3b"/></svg><b>ノートとペンだけ</b><span>教材の予習は要りません</span></div>
+      <div class="reassure-item"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15 25L22 32L34 17" fill="none" stroke="#f26b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>受験は未定でOK</b><span>12月のことは、あとで</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ ② 開催概要 ============ -->
 <section>
@@ -331,7 +395,8 @@ window.IOB_PHASE = (function(){
   <div class="wrap">
     <div class="sec-eyebrow">当日の流れ</div>
     <h2 class="sec-title">90分で、試験を見て、実際に解いてみます</h2>
-    <div class="taste" style="margin-top:0;margin-bottom:22px;">
+    <div class="taste core" style="margin-top:0;margin-bottom:22px;">
+      <svg class="bulb" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5C15 5 9 12 9 20C9 26 12 29 15 33C16.5 35 17 36.5 17 38H31C31 36.5 31.5 35 33 33C36 29 39 26 39 20C39 12 33 5 24 5Z" fill="#f7e0a0" stroke="#553727" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 42H30M20 46H28" stroke="#553727" stroke-width="2.6" stroke-linecap="round"/><path d="M24 13V23M20 19L24 23L28 19" stroke="#f26b3b" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="label">この日に持ち帰ってほしい、ひとこと</div>
       <div class="q-item"><div class="qt">試験勉強は、学んだことを、もう一度ぜんぶ見直すことじゃない。試験でどう問われるかを先に見て、必要なところへ戻ればいい。</div></div>
     </div>
@@ -428,28 +493,87 @@ window.IOB_PHASE = (function(){
   <div class="wrap">
     <div class="sec-eyebrow">こんな方に</div>
     <h2 class="sec-title">いまの状況は、どれに近いですか</h2>
-    <p>どれでも来てください。久しぶりの方も、いま学んでいる方も、いっしょです。お申し込みフォームで近いものをひとつ選んでもらいます。当日の話し方の参考にします。</p>
+    <p>どれでも来てください。久しぶりの方も、いま学んでいる方も、いっしょです。お申し込みフォームで、近いものをひとつ選んでもらいます。</p>
 
-    <div class="u-block">
-      <div class="label">受験する予定</div>
-      <p>12月の試験を受けるつもりの方。どんな問われ方をするのかを、先に見てみましょう。</p>
+    <div class="persona p1">
+      <svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#fde7dc"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#f26b3b"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#f6d3b8"/>
+  <path d="M25 50C22 22 38 13 49 13S75 22 71 50L71 66 59 66 59 40 37 40 37 66 25 66Z" fill="#4a2f22"/>
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#f6d3b8"/>
+  <path d="M27 42C28 26 38 21 49 21S69 26 69 42C62 34 56 31 48 31S34 34 27 42Z" fill="#4a2f22"/>
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <circle cx="40" cy="45" r="2.3" fill="#553727"/><circle cx="56" cy="45" r="2.3" fill="#553727"/>
+  <path d="M41 54Q48 61 55 54" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  
+  <g transform="translate(62 62) rotate(35)"><rect x="0" y="0" width="7" height="26" rx="1.5" fill="#f2b84b"/><path d="M0 0H7L3.5 -7Z" fill="#f6d3b8"/><path d="M2.2 -3.1H4.8L3.5 -7Z" fill="#553727"/></g>
+</svg>
+      <div class="persona-body">
+        <div class="persona-tag">A</div>
+        <div class="persona-label">受験する予定</div>
+        <p>12月の試験を受けるつもりの方。どんな問われ方をするのかを、先に見てみましょう。</p>
+      </div>
     </div>
-    <div class="u-block">
-      <div class="label">迷っている</div>
-      <p>受けたい気持ちはあるけれど、決めきれない方。決めてから来る必要はありません。見てから考えて大丈夫です。</p>
+    <div class="persona p2">
+      <svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#e3f1f9"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#0085c9"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#f3cfb0"/>
+  <circle cx="48" cy="12" r="9" fill="#6b4a3a"/><path d="M26 46C24 22 36 15 48 15S73 22 70 46C66 36 60 31 48 31S32 36 26 46Z" fill="#6b4a3a"/>
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#f3cfb0"/>
+  
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <circle cx="40" cy="46" r="2.3" fill="#553727"/><circle cx="56" cy="46" r="2.3" fill="#553727"/>
+  <path d="M42 57Q45 54 48 57T54 57" stroke="#553727" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M35 38L44 36M52 36L61 38" stroke="#553727" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="78" cy="18" r="12" fill="#fff" stroke="#0085c9" stroke-width="2.4"/><text x="78" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#0085c9" font-family="sans-serif">?</text>
+</svg>
+      <div class="persona-body">
+        <div class="persona-tag">B</div>
+        <div class="persona-label">迷っている</div>
+        <p>受けたい気持ちはあるけれど、決めきれない方。決めてから来る必要はありません。見てから考えて大丈夫です。</p>
+      </div>
     </div>
-    <div class="u-block">
-      <div class="label">受験は考えていないが、学び直したい</div>
-      <p>試験が目的でなくても大丈夫です。学んだことを、もう一度つなぎ直す機会にしてください。</p>
+    <div class="persona p3">
+      <svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#eaf3dc"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#6aa84f"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#f6d6bd"/>
+  
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#f6d6bd"/>
+  <path d="M27 44C26 24 37 17 49 17S71 24 69 44C64 35 58 30 48 30S32 36 27 44Z" fill="#cfc8c0"/>
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <circle cx="40" cy="45" r="1.8" fill="#553727"/><circle cx="56" cy="45" r="1.8" fill="#553727"/>
+  <path d="M41 54Q48 61 55 54" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <circle cx="40" cy="45" r="6.5" fill="none" stroke="#553727" stroke-width="1.8"/><circle cx="56" cy="45" r="6.5" fill="none" stroke="#553727" stroke-width="1.8"/><path d="M46.5 45H49.5" stroke="#553727" stroke-width="1.8"/>
+  <g transform="translate(55 70)"><path d="M0 4C6 0 12 0 18 4V22C12 18 6 18 0 22Z" fill="#fff" stroke="#553727" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 4C24 0 30 0 36 4V22C30 18 24 18 18 22" fill="#fff" stroke="#553727" stroke-width="1.8" stroke-linejoin="round"/></g>
+</svg>
+      <div class="persona-body">
+        <div class="persona-tag">C</div>
+        <div class="persona-label">受験は考えていないが、学び直したい</div>
+        <p>試験が目的でなくても大丈夫です。学んだことを、もう一度つなぎ直す機会にしてください。</p>
+      </div>
     </div>
-    <div class="u-block">
-      <div class="label">まずは聞いてみたい</div>
-      <p>まだ何も決まっていない方も歓迎です。しばらく教材を開いていなくても、聞くだけで参加できます。</p>
-    </div>
-
-    <div class="photo">
-      <img src="img/tour_nagano.jpg" alt="2019年 長野でのオーガニック視察の参加者" loading="lazy">
-      <div class="cap">2019年 長野の視察にて。</div>
+    <div class="persona p4">
+      <svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#fbeec9"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#8a6a4f"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#e9bf9c"/>
+  
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#e9bf9c"/>
+  <path d="M27 43C27 25 37 19 48 19S69 25 69 43C64 36 58 31 48 31S32 36 27 43Z" fill="#2f2a28"/>
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <path d="M37 46Q40 42.5 43 46M53 46Q56 42.5 59 46" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M41 54Q48 61 55 54" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M24 46C22 14 74 14 72 46" fill="none" stroke="#553727" stroke-width="4" stroke-linecap="round"/><rect x="19" y="40" width="9" height="16" rx="4" fill="#f26b3b"/><rect x="68" y="40" width="9" height="16" rx="4" fill="#f26b3b"/>
+  <path d="M84 34Q88 40 84 46M88 30Q94 40 88 50" stroke="#f26b3b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+</svg>
+      <div class="persona-body">
+        <div class="persona-tag">D</div>
+        <div class="persona-label">まずは聞いてみたい</div>
+        <p>まだ何も決まっていない方も歓迎です。しばらく教材を開いていなくても、聞くだけで参加できます。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -564,6 +688,55 @@ window.IOB_PHASE = (function(){
 <!-- ============ ⑨ 最後の一言 ============ -->
 <div class="closing">
   <div class="wrap">
+    <div class="avatar-row"><svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#fde7dc"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#f26b3b"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#f6d3b8"/>
+  <path d="M25 50C22 22 38 13 49 13S75 22 71 50L71 66 59 66 59 40 37 40 37 66 25 66Z" fill="#4a2f22"/>
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#f6d3b8"/>
+  <path d="M27 42C28 26 38 21 49 21S69 26 69 42C62 34 56 31 48 31S34 34 27 42Z" fill="#4a2f22"/>
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <circle cx="40" cy="45" r="2.3" fill="#553727"/><circle cx="56" cy="45" r="2.3" fill="#553727"/>
+  <path d="M41 54Q48 61 55 54" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  
+  <g transform="translate(62 62) rotate(35)"><rect x="0" y="0" width="7" height="26" rx="1.5" fill="#f2b84b"/><path d="M0 0H7L3.5 -7Z" fill="#f6d3b8"/><path d="M2.2 -3.1H4.8L3.5 -7Z" fill="#553727"/></g>
+</svg><svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#e3f1f9"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#0085c9"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#f3cfb0"/>
+  <circle cx="48" cy="12" r="9" fill="#6b4a3a"/><path d="M26 46C24 22 36 15 48 15S73 22 70 46C66 36 60 31 48 31S32 36 26 46Z" fill="#6b4a3a"/>
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#f3cfb0"/>
+  
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <circle cx="40" cy="46" r="2.3" fill="#553727"/><circle cx="56" cy="46" r="2.3" fill="#553727"/>
+  <path d="M42 57Q45 54 48 57T54 57" stroke="#553727" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M35 38L44 36M52 36L61 38" stroke="#553727" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="78" cy="18" r="12" fill="#fff" stroke="#0085c9" stroke-width="2.4"/><text x="78" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#0085c9" font-family="sans-serif">?</text>
+</svg><svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#eaf3dc"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#6aa84f"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#f6d6bd"/>
+  
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#f6d6bd"/>
+  <path d="M27 44C26 24 37 17 49 17S71 24 69 44C64 35 58 30 48 30S32 36 27 44Z" fill="#cfc8c0"/>
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <circle cx="40" cy="45" r="1.8" fill="#553727"/><circle cx="56" cy="45" r="1.8" fill="#553727"/>
+  <path d="M41 54Q48 61 55 54" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <circle cx="40" cy="45" r="6.5" fill="none" stroke="#553727" stroke-width="1.8"/><circle cx="56" cy="45" r="6.5" fill="none" stroke="#553727" stroke-width="1.8"/><path d="M46.5 45H49.5" stroke="#553727" stroke-width="1.8"/>
+  <g transform="translate(55 70)"><path d="M0 4C6 0 12 0 18 4V22C12 18 6 18 0 22Z" fill="#fff" stroke="#553727" stroke-width="1.8" stroke-linejoin="round"/><path d="M18 4C24 0 30 0 36 4V22C30 18 24 18 18 22" fill="#fff" stroke="#553727" stroke-width="1.8" stroke-linejoin="round"/></g>
+</svg><svg class="avatar" viewBox="0 0 96 96" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="48" cy="48" r="48" fill="#fbeec9"/>
+  <path d="M14 96C14 75 30 67 48 67S82 75 82 96Z" fill="#8a6a4f"/>
+  <rect x="42" y="58" width="12" height="13" rx="5" fill="#e9bf9c"/>
+  
+  <ellipse cx="48" cy="44" rx="20" ry="22" fill="#e9bf9c"/>
+  <path d="M27 43C27 25 37 19 48 19S69 25 69 43C64 36 58 31 48 31S32 36 27 43Z" fill="#2f2a28"/>
+  <ellipse cx="35" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/><ellipse cx="61" cy="52" rx="4" ry="2.6" fill="#f08a6c" opacity=".35"/>
+  <path d="M37 46Q40 42.5 43 46M53 46Q56 42.5 59 46" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M41 54Q48 61 55 54" stroke="#553727" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M24 46C22 14 74 14 72 46" fill="none" stroke="#553727" stroke-width="4" stroke-linecap="round"/><rect x="19" y="40" width="9" height="16" rx="4" fill="#f26b3b"/><rect x="68" y="40" width="9" height="16" rx="4" fill="#f26b3b"/>
+  <path d="M84 34Q88 40 84 46M88 30Q94 40 88 50" stroke="#f26b3b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+</svg></div>
     <p class="mincho">久しぶりの方も、<br>そのままで大丈夫です。<br><br>日曜の夜に、<br>試験をいっしょに見てみませんか。</p>
     <div class="actions">
       <a class="primary" href="#applyForm">申込フォームへ</a>
