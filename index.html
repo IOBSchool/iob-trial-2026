@@ -259,22 +259,14 @@
   .taste.core .qt{font-size:17px;font-weight:700;line-height:1.9;}
   @media(max-width:480px){ .taste.core{padding-left:62px;padding-right:16px;} .taste.core .bulb{left:12px;width:38px;height:38px;} .taste.core .qt{font-size:15.5px;line-height:1.85;} }
 
-  /* 当日の流れ：縦のライン＋丸 */
+  /* 当日の流れ：縦のライン＋丸（時刻ラベルなし。線と丸は左端、カードは右） */
   .timeline{position:relative;}
-  .timeline > li{position:relative;border-bottom:none;padding:14px 0 14px 0;}
-  .timeline > li::before{content:"";position:absolute;left:105px;top:0;bottom:0;border-left:3px solid #f3d8c8;}
-  .timeline > li::after{content:"";position:absolute;left:99px;top:24px;width:15px;height:15px;border-radius:50%;background:var(--point);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--point);}
-  .timeline > li:first-child::before{top:24px;} .timeline > li:last-child::before{bottom:calc(100% - 24px);}
-  .timeline .when{width:90px;}
-  .timeline .what{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 14px;margin-left:22px;}
+  .timeline > li{position:relative;border-bottom:none;padding:10px 0 10px 0;display:block;}
+  .timeline > li::before{content:"";position:absolute;left:9px;top:0;bottom:0;border-left:3px solid #f3d8c8;}
+  .timeline > li::after{content:"";position:absolute;left:3px;top:30px;width:15px;height:15px;border-radius:50%;background:var(--point);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--point);}
+  .timeline > li:first-child::before{top:40px;} .timeline > li:last-child::before{bottom:calc(100% - 40px);}
+  .timeline .what{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 14px;margin-left:34px;}
   section:not(.alt) .timeline .what{background:var(--white);}
-  @media(max-width:480px){
-    .timeline > li{flex-direction:row;gap:0;padding-left:0;}
-    .timeline > li::before{left:9px;} .timeline > li::after{left:3px;top:20px;}
-    .timeline .when{position:absolute;left:30px;top:6px;width:auto;font-size:13px;}
-    .timeline .when small{display:inline;margin-left:6px;}
-    .timeline .what{margin-left:30px;margin-top:30px;width:calc(100% - 30px);}
-  }
 
   .faq .q .qm{width:24px;height:24px;border-radius:50%;background:var(--point);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:13px;margin-top:1px;}
   .faq .a{padding-left:32px;}
